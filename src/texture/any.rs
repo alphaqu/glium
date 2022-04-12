@@ -189,7 +189,7 @@ pub fn new_texture<'a, F: ?Sized, P>(facade: &F, format: TextureFormatRequest,
         TextureFormatRequest::AnyIntegral => (gl::NEAREST, gl::NEAREST_MIPMAP_NEAREST),
         TextureFormatRequest::AnyUnsigned => (gl::NEAREST, gl::NEAREST_MIPMAP_NEAREST),
         TextureFormatRequest::AnyStencil => (gl::NEAREST, gl::NEAREST_MIPMAP_NEAREST),
-        _ => (gl::LINEAR, gl::LINEAR_MIPMAP_LINEAR),
+        _ => (gl::NEAREST, gl::NEAREST_MIPMAP_NEAREST),
     };
 
     let is_multisampled = matches!(ty, Dimensions::Texture2dMultisample {..}
